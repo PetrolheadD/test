@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #result {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        #image-container {
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function showResult() {
+            var resultElement = document.getElementById('result');
+            var imageContainer = document.getElementById('image-container');
+            var yesRadioButton = document.getElementById('yes');
+            
+            if (yesRadioButton.checked) {
+                resultElement.textContent = 'Test 1';
+                imageContainer.innerHTML = '<img src="https://img.freepik.com/premium-photo/sad-boy-crying-after-breakup-with-girlfriend_221194-2356.jpg" alt="Yes Image">';
+            } else {
+                resultElement.textContent = 'Test 2';
+                imageContainer.innerHTML = '<img src="no-image.jpg" alt="No Image">';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Do you wanna go out?</h1>
+
+    <label>
+        <input type="radio" name="choice" id="yes" onclick="showResult()"> Yes
+    </label>
+
+    <label>
+        <input type="radio" name="choice" id="no" onclick="showResult()"> No
+    </label>
+
+    <div id="result"></div>
+
+    <div id="image-container"></div>
+</body>
+</html>
